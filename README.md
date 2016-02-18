@@ -22,7 +22,7 @@ Running the app
    * Run 'composer update' from the root directory.
    * Create a new database called *payment_gateway* and update connection parameters in app/bootstrap.php file.
    * Create the necessary tables as give in install/db.sql or simply run the install/create_tables.php file
-   * Optionally, update *app/bootstrap.php* with your own client id and client secret.
+   * Optionally, update *app/bootstrap.php* with your own paypal client id, paypal client secret, braintree merchant id, braintree public key and braintree private key.
    * You are ready. Bring up http://localhost/payment-gateway on your favorite browser.
 
 Credit Card Sample
