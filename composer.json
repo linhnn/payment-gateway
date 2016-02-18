@@ -1,0 +1,13 @@
+{
+  "name": "payment-gateway",
+  "description": "Payment Gateway",
+  "require": {
+    "paypal/rest-api-sdk-php" : "1.*",
+    "braintree/braintree_php" : "3.8.0"
+  },
+  "autoload": {
+    "classmap": [
+      "app/models"
+    ]
+  }
+}
