@@ -201,6 +201,16 @@ class Payment {
             $messageArr['type'] = "error";
             return;
         }
+        if (!is_numeric($order['amount'])) {
+            $messageArr['content'] = 'Payment amount must be number.';
+            $messageArr['type'] = "error";
+            return;
+        }
+        if ($order['amount'] < 1) {
+            $messageArr['content'] = 'Payment amount must be integer.';
+            $messageArr['type'] = "error";
+            return;
+        }
 
         // Currency Validation
         if (!isset($order['currency'])) {

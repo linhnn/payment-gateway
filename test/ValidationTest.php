@@ -42,6 +42,24 @@ class ValidationTest extends  PHPUnit_Framework_TestCase {
         $this->assertEquals('Payment amount cannot be null.', $result['content']);
     }
 
+    public function testAmountNotNumber() {
+        $param = $this->param;
+        $param['amount'] = 'abcdef';
+        $result = $this->payment->makePayment($param);
+
+        $this->assertEquals('error', $result['type']);
+        $this->assertEquals('Payment amount must be number.', $result['content']);
+    }
+
+    public function testAmountNotValid() {
+        $param = $this->param;
+        $param['amount'] = -1;
+        $result = $this->payment->makePayment($param);
+
+        $this->assertEquals('error', $result['type']);
+        $this->assertEquals('Payment amount must be integer.', $result['content']);
+    }
+
     public function testCurrenyNotSet() {
         $param = $this->param;
         unset($param['currency']);
